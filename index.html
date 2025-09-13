@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-sort-amount-down"></i> Sorting Algorithm Visualizer</h1>
+        <p>Visualize how different sorting algorithms work</p>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="arraySize">Array Size</label>
+                <input type="range" id="arraySize" min="10" max="100" value="50">
+                <span id="arraySizeValue">50</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="sortSpeed">Sorting Speed</label>
+                <input type="range" id="sortSpeed" min="1" max="100" value="50">
+                <span id="speedValue">50</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="algorithm">Algorithm</label>
+                <select id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <button id="generateBtn" class="primary">Generate New Array</button>
+            </div>
+            
+            <div class="control-group">
+                <button id="sortBtn" class="primary">Start Sorting</button>
+            </div>
+        </div>
+        
+        <div class="visualization" id="arrayContainer">
+            <!-- Bars will be generated here -->
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="comparisons">0</div>
+                <div class="stat-label">Comparisons</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value" id="swaps">0</div>
+                <div class="stat-label">Swaps</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-value" id="time">0 ms</div>
+                <div class="stat-label">Time</div>
+            </div>
+        </div>
+        
+        <div class="algo-info">
+            <h3>About <span id="algoName">Bubble Sort</span></h3>
+            <p id="algoDescription">
+                Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, 
+                compares adjacent elements and swaps them if they are in the wrong order.
+            </p>
+            
+            <div class="complexity">
+                <div>
+                    <div class="stat-value">O(n²)</div>
+                    <div class="stat-label">Worst Case</div>
+                </div>
+                
+                <div>
+                    <div class="stat-value">O(n²)</div>
+                    <div class="stat-label">Average Case</div>
+                </div>
+                
+                <div>
+                    <div class="stat-value">O(n)</div>
+                    <div class="stat-label">Best Case</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container instructions">
+        <h3>How to Use</h3>
+        <ul>
+            <li>Adjust the <strong>Array Size</strong> slider to change the number of elements</li>
+            <li>Adjust the <strong>Sorting Speed</strong> slider to control the visualization speed</li>
+            <li>Select a sorting algorithm from the dropdown menu</li>
+            <li>Click <strong>Generate New Array</strong> to create a new random array</li>
+            <li>Click <strong>Start Sorting</strong> to begin the visualization</li>
+            <li>Observe the statistics (comparisons, swaps, time) during the sorting process</li>
+        </ul>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

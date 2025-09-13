@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fdbb2d;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+select, button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #4a5568;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+select:hover, button:hover {
+    background: #2d3748;
+    transform: translateY(-2px);
+}
+
+button.primary {
+    background: #fdbb2d;
+    color: #1a2a6c;
+    font-weight: 600;
+}
+
+button.primary:hover {
+    background: #f9a825;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.visualization {
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    flex: 1;
+    margin: 0 2px;
+    background: linear-gradient(to top, #fdbb2d, #b21f1f);
+    border-radius: 3px 3px 0 0;
+    transition: height 0.2s ease;
+}
+
+.bar.comparing {
+    background: linear-gradient(to top, #00c6ff, #0072ff);
+}
+
+.bar.sorted {
+    background: linear-gradient(to top, #56ab2f, #a8e063);
+}
+
+.bar.swapping {
+    background: linear-gradient(to top, #ff512f, #dd2476);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    min-width: 150px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fdbb2d;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.algo-info {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.algo-info h3 {
+    margin-bottom: 10px;
+    color: #fdbb2d;
+}
+
+.complexity {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.complexity div {
+    text-align: center;
+}
+
+.instructions {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #fdbb2d;
+}
+
+.instructions ul {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .control-group {
+        width: 100%;
+    }
+    
+    input[type="range"] {
+        width: 100%;
+    }
+    
+    .visualization {
+        height: 300px;
+    }
+    
+    .stat-card {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .visualization {
+        height: 250px;
+    }
+    
+    .stat-card {
+        min-width: 100px;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
